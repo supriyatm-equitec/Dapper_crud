@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Dapper_mvc.Models.User>
+
+@{
+    ViewBag.Title = "Deleted Users";
+}
+
+<h2>Deleted Users</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Department</td>
+                <td>@user.Email</td>
+                <td>@user.MobileNo</td>
+                <td>@user.DOB.ToString("MM/dd/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Back to User List", "Index")
+</p>
